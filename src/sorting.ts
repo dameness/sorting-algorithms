@@ -58,3 +58,29 @@ export const selectionSort = (arr: number[]) => {
 
   return arr;
 };
+
+const partition = (arr: number[], p: number, r: number) => {
+  const x = arr[r];
+  let i = p - 1;
+  for (let j = p; j < r; j++) {
+    if (arr[j] <= x) {
+      i++;
+      swap(arr, i, j);
+    }
+  }
+  swap(arr, i + 1, r);
+
+  return i + 1;
+};
+export const quickSort = (arr: number[], p?: number, r?: number) => {
+  if (!p) p = 0;
+  if (!r) r = arr.length - 1;
+  let q: number;
+  if (p < 3) {
+    q = partition(arr, p, r);
+    quickSort(arr, p, q - 1);
+    quickSort(arr, q + 1, r);
+  }
+
+  return arr;
+};

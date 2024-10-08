@@ -1,3 +1,3 @@
-import { bubbleSort, insertionSort, selectionSort } from './sorting';
+import { bubbleSort, insertionSort, quickSort, selectionSort } from './sorting';
 
-console.log(selectionSort([5, 2, 4, 6, 1, 3]));
+console.log(quickSort([5, 2, 4, 6, 1, 3]));
